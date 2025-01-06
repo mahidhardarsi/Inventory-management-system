@@ -61,10 +61,10 @@ def show_splash_screen(duration=3000):
 
 def main_application():
     root = tk.Tk()
-    root.iconbitmap(r'ZEST ENTERPRISES.ico')  # Replace with your .ico file path
-    logo_image = tk.PhotoImage(file=r'zest.png')
-    logo_label = tk.Label(root, image=logo_image)
-    logo_label.pack()
+    # root.iconbitmap(r'ZEST ENTERPRISES.ico')  # Replace with your .ico file path
+    # logo_image = tk.PhotoImage(file=r'zest.png')
+    # logo_label = tk.Label(root, image=logo_image)
+    # logo_label.pack()
     app = InventoryApp(root)
     root.mainloop()
 
