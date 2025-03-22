@@ -283,7 +283,6 @@ class AddItemsPage:
       return self.frame  # This method returns the frame of AddItemsPage
 
 
-# To test the application independently 
 if __name__ == "__main__":
     root = tk.Tk()
     root.title("Add Items Page")

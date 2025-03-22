@@ -4,8 +4,7 @@ from tkinter import ttk, messagebox
 import sqlite3
 from datetime import datetime
 from tkcalendar import DateEntry
-import pandas as pd  # Ensure you have pandas installed
-
+import pandas as pd  
 
 
 class ReportPage:
