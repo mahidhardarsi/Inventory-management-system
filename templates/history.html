@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Transaction History</h2>
+<form method="POST" action="{{ url_for('history') }}">
+    <div class="form-group">
+        <label for="transaction_type">Transaction Type:</label>
+        <select class="form-control" id="transaction_type" name="transaction_type">
+            <option value="inventory_sell">Inventory Sell</option>
+            <option value="inventory_bought">Inventory Bought</option>
+            <option value="returns">Returns</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Report Type:</label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="report_type" value="single" checked>
+            <label class="form-check-label">Single Date</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="report_type" value="range">
+            <label class="form-check-label">Date Range</label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="single_date">Select Date:</label>
+        <input type="date" class="form-control" id="single_date" name="single_date">
+    </div>
+    <div class="form-group">
+        <label for="from_date">From Date:</label>
+        <input type="date" class="form-control" id="from_date" name="from_date">
+    </div>
+    <div class="form-group">
+        <label for="to_date">To Date:</label>
+        <input type="date" class="form-control" id="to_date" name="to_date">
+    </div>
+    <div class="form-group">
+        <label for="return_type">Return Type:</label>
+        <select class="form-control" id="return_type" name="return_type">
+            <option value="all">All</option>
+            <option value="purchase_return">Purchase Return</option>
+            <option value="sales_return">Sales Return</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="condition">Condition:</label>
+        <select class="form-control" id="condition" name="condition">
+            <option value="all">All</option>
+            <option value="good">Good</option>
+            <option value="damaged">Damaged</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Fetch Transactions</button>
+</form>
+<div class="mt-4">
+    <h3>Transactions</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Bill No</th>
+                <th>Timestamp</th>
+                <th>Product Name</th>
+                <th>Product Code</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody id="transactionsTableBody">
+            <!-- Data will be populated here -->
+        </tbody>
+    </table>
+</div>
+{% endblock %} 

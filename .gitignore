@@ -1,0 +1,24 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# Local development settings
+.env
+
+# IDE settings
+.vscode/
+.idea/
+
+# Database files
+*.db
+
+# Inventory folder
+inventory/ 
+__pycache__/
+

@@ -1,0 +1,13 @@
+/inventory/
+.vscode
+templates/
+*/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.sqlite3
+.env
+*.egg-info/
+app.py
+

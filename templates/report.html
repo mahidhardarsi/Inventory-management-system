@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Inventory & Sales Report</h2>
+<form method="POST" action="{{ url_for('report') }}">
+    <div class="form-group">
+        <label>Report Type:</label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="report_type" value="range" checked>
+            <label class="form-check-label">Date Range</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="report_type" value="single">
+            <label class="form-check-label">Single Date</label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="from_date">From Date:</label>
+        <input type="date" class="form-control" id="from_date" name="from_date">
+    </div>
+    <div class="form-group">
+        <label for="to_date">To Date:</label>
+        <input type="date" class="form-control" id="to_date" name="to_date">
+    </div>
+    <button type="submit" class="btn btn-primary">Generate Report</button>
+</form>
+<div class="mt-4">
+    <h3>Summary</h3>
+    <p>Total Items Sold: <span id="totalSold">0</span></p>
+    <p>Total Revenue: ₹<span id="totalRevenue">0.00</span></p>
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Product Code</th>
+            <th>Product Name</th>
+            <th>Sold Quantity</th>
+            <th>Total Revenue</th>
+            <th>Current Stock</th>
+        </tr>
+    </thead>
+    <tbody id="reportTableBody">
+        <!-- Data will be populated here -->
+    </tbody>
+</table>
+{% endblock %} 
